@@ -30,5 +30,15 @@ class Book(SQLModel, table = True):
 
 class ProductoBase(SQLModel):
     nombre:      str   | None = Field(default=None, nullable=True)
-    descripcion: str   | None = Field(default=None, nullable=True)
-    
+    dueño: str   | None = Field(default=None, nullable=True)
+    rasa: str | None = Field(default=None, nullable=True)
+class Usuario(UsuarioBase, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+
+
+class UsuarioCreate(UsuarioBase):
+    pass
+
+
+class UsuarioUpdate(UsuarioBase):
+    pass
