@@ -32,13 +32,14 @@ class ProductoBase(SQLModel):
     nombre:      str   | None = Field(default=None, nullable=True)
     dueño: str   | None = Field(default=None, nullable=True)
     rasa: str | None = Field(default=None, nullable=True)
-class Usuario(UsuarioBase, table=True):
+
+class Dueño(DueñoBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
 
 
-class UsuarioCreate(UsuarioBase):
+class DueñoCreate(DueñoBase):
     pass
 
 
-class UsuarioUpdate(UsuarioBase):
+class DueñoUpdate(DueñoBase):
     pass
