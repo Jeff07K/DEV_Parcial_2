@@ -1,13 +1,17 @@
 from typing import List
-
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, UploadFile, File
+from sqlmodel import Session
+from models.perritos import (Perritos)
+from models.trainer import TrainerBase, TrainerID
 
 from db import  SessionDep, create_all_tables
 from sqlmodel import select
 
 app = FastAPI()
 
-
+@app.get("/perritos")
+async def perritos():
+    return Perritos()
 
 
 @app.get("/")

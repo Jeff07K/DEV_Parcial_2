@@ -27,3 +27,8 @@ class Book(SQLModel, table = True):
         default_factory=datetime.utcnow(),
         sa_column_kwargs={"server_default": "NOW()"}
     )
+
+class ProductoBase(SQLModel):
+    nombre:      str   | None = Field(default=None, nullable=True)
+    descripcion: str   | None = Field(default=None, nullable=True)
+    
